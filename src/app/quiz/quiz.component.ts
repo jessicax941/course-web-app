@@ -34,13 +34,9 @@ export class QuizComponent implements OnInit, OnDestroy {
     constructor(private _Activatedroute: ActivatedRoute, private _quizService: QuizService,
         private _courseService: CourseService) {
         this.quizId = parseInt(this._Activatedroute.snapshot.paramMap.get("id"));
-        // console.log("id", this._Activatedroute.snapshot.paramMap.get("id"));
         this.quizTitle = _quizService.getQuizTitle(this.quizId);
 
-        // console.log("quiz.component quizService", _quizService);
         this.question = _quizService.getQuestion(this.quizId);
-        // console.log("quiz.component qn", this.question);
-        // console.log("quiz.component id", this.quizId);
         this.questionString = this.question.questionString;
         this.options = this.question.options;
         this.answer = this.question.answer;
@@ -68,11 +64,6 @@ export class QuizComponent implements OnInit, OnDestroy {
             this.isCorrect = true;
             this._courseService.incrementScore();
             console.log("incremented score");
-            // this._courseService.addScoreForCorrectAnswer();
-            // this.correctAnswerEvent.emit(true);
-            // this.addScoreForCorrectAnswer.emit();
-            // dispatchEvent(new Event("addScoreForCorrectAnswer", { bubbles: true }));
-            // console.log(this._courseService.getScore());
         } else {
             this.isCorrect = false;
         }

@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-import { QuizComponent } from '../quiz/quiz.component';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CourseService } from '../course.service';
 
@@ -8,9 +7,8 @@ import { CourseService } from '../course.service';
     templateUrl: './course.component.html',
     styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CourseComponent implements OnInit, OnDestroy {
 
-    // @ViewChild(QuizComponent) quizComponent;
     score: number = 0;
     correctScore: number = 10;
     subscription: Subscription;
@@ -23,20 +21,8 @@ export class CourseComponent implements OnInit, AfterViewInit, OnDestroy {
         this.subscription = this.courseService.currentScore.subscribe(score => this.score = score);
     }
 
-    ngAfterViewInit() {
-        // console.log("viewchild", this.quizComponent.isCorrect);
-    }
-
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-
-    // public addScoreForCorrectAnswer() {
-    //     // if (bool) {
-    //         this.score += this.correctScore;
-    //         // console.log("course.component score", this.score);
-
-    //     // }
-    // }
 
 }
