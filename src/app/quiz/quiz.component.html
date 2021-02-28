@@ -1,0 +1,57 @@
+<div class="quiz-container">
+
+    <h3>{{quizTitle}}</h3>
+
+    <div class="form">
+
+        <p>Question {{quizId + 1}}: {{questionString}}</p>
+
+        <!-- Radio buttons -->
+        <div class="form-group">
+            <input type="radio" [(ngModel)]="optionSelected" [id]="options[0]" name="question" [value]="options[0]"
+                [disabled]="hasAnswered">
+            <label [for]="options[0]">{{options[0]}}</label>
+        </div>
+
+        <div class="form-group">
+            <input type="radio" [(ngModel)]="optionSelected" [id]="options[1]" name="question" [value]="options[1]"
+                [disabled]="hasAnswered">
+            <label [for]="options[1]">{{options[1]}}</label>
+        </div>
+
+        <div class="form-group">
+            <input type="radio" [(ngModel)]="optionSelected" [id]="options[2]" name="question" [value]="options[2]"
+                [disabled]="hasAnswered">
+            <label [for]="options[2]">{{options[2]}}</label>
+        </div>
+
+        <!-- Display correct/incorrect messages -->
+        <ng-template [ngIf]="hasAnswered && isCorrect">
+            <p id="correct">Correct</p>
+            <p>You got it right! 🎉</p>
+        </ng-template>
+
+        <ng-template [ngIf]="hasAnswered && !isCorrect">
+            <p id="incorrect">Incorrect</p>
+            <p>The answer was <span id="display-answer">{{answer}}</span>. Try again next time! 💪</p>
+        </ng-template>
+
+        <!-- Buttons for checking answer and moving on -->
+        <ng-template [ngIf]="!hasAnswered" [ngIfElse]="continue">
+            <button id="check-answer-btn" (click)="submitAnswer()" [disabled]="optionSelected === ''">Check
+                Answer</button>
+        </ng-template>
+
+        <ng-template #continue>
+            <ng-template [ngIf]="hasAnswered && !isLastQuestion">
+                <button id="continue-btn" [routerLink]="['/video', quizId + 1]">Continue</button>
+            </ng-template>
+
+            <ng-template [ngIf]="hasAnswered && isLastQuestion">
+                <button id="complete-btn" routerLink="/end">Complete Course</button>
+            </ng-template>
+        </ng-template>
+
+
+    </div>
+</div>

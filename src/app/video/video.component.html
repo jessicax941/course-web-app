@@ -1,0 +1,7 @@
+<div class="video-container">
+    <h3>{{videoId + 1}}. {{videoTitle}}</h3>
+    <iframe width="840" height="472" [src]="link" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <button [routerLink]="['/quiz', videoId]"><i class="fas fa-play"></i>Continue To Quiz</button>
+</div>

@@ -1,0 +1,76 @@
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin: 0.25em 0;
+}
+
+input {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    transition: 0.15s all linear;
+    position: relative;
+    top: 2px;
+}
+
+input:checked {
+    border: 5px solid var(--secondary);
+    background-color: white !important;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    margin-left: 0.4em;
+}
+
+#check-answer-btn {
+    margin: 2em 0;
+}
+
+#check-answer-btn:disabled {
+    background-color: grey;
+    cursor: default;
+}
+
+#continue-btn {
+    margin: 1em 0;
+}
+
+#correct {
+    font-weight: bold;
+    font-size: larger;
+    color: var(--secondary);
+    margin-bottom: 0;
+}
+
+#incorrect {
+    font-weight: bold;
+    font-size: larger;
+    color: salmon;
+    margin-bottom: 0;
+}
+
+#display-answer {
+    line-height: 1.5;
+    padding: 0 4px;
+    background-color: #f2c94c59;
+    border-radius: 3px;
+}

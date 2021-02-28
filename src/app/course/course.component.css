@@ -1,0 +1,13 @@
+.course-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 4rem;
+}
+
+#score {
+    margin: 0;
+    font-weight: bold;
+    font-size: larger;
+}
