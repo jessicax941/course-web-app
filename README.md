@@ -1,4 +1,5 @@
-# Course web app
+# Course-web-app
+For class.tv
 
 ### Features implemented
 - Home page (start the course)
