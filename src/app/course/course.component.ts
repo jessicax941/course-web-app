@@ -13,12 +13,10 @@ export class CourseComponent implements OnInit, OnDestroy {
     correctScore: number = 10;
     subscription: Subscription;
 
-    constructor(private courseService: CourseService) {
-        // this.score = 0;
-    }
+    constructor(private _courseService: CourseService) {}
 
     ngOnInit(): void {
-        this.subscription = this.courseService.currentScore.subscribe(score => this.score = score);
+        this.subscription = this._courseService.currentScore.subscribe(score => this.score = score);
     }
 
     ngOnDestroy() {

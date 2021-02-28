@@ -17,7 +17,7 @@ export class CourseService {
     }
 
     public incrementScore() {
-        this.score.next(20);
+        this.score.next(this.score.getValue() + this.correctScore);
     }
     
 
