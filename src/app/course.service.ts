@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root' // angular provides this service in the root injector -> available throughout the app
 })
 export class CourseService {
 
@@ -18,6 +18,10 @@ export class CourseService {
 
     public incrementScore() {
         this.score.next(this.score.getValue() + this.correctScore);
+    }
+
+    public resetScore() {
+        this.score.next(0);
     }
     
 

@@ -22,4 +22,8 @@ export class EndCourseComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
+    resetScore() {
+        this._courseService.resetScore();
+    }
+
 }

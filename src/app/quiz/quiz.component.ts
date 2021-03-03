@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
     selector: 'app-quiz',
     templateUrl: './quiz.component.html',
     styleUrls: ['./quiz.component.css'],
-    providers: [ QuizService, CourseService ]
+    providers: [ QuizService ]
 })
 export class QuizComponent implements OnInit, OnDestroy {
 
@@ -63,7 +63,6 @@ export class QuizComponent implements OnInit, OnDestroy {
         if (this.optionSelected === this.answer) {
             this.isCorrect = true;
             this._courseService.incrementScore();
-            console.log("incremented score");
         } else {
             this.isCorrect = false;
         }

@@ -5,7 +5,8 @@ import { CourseService } from '../course.service';
 @Component({
     selector: 'app-course',
     templateUrl: './course.component.html',
-    styleUrls: ['./course.component.css']
+    styleUrls: ['./course.component.css'],
+    providers: [ CourseService ], // also provided for all CHILD components
 })
 export class CourseComponent implements OnInit, OnDestroy {
 
