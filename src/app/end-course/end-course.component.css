@@ -11,9 +11,10 @@
 }
 
 #score {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
     margin-top: 0;
+    color: var(--secondary);
 }
 
 button {
